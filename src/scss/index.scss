@@ -36,12 +36,7 @@ img {
         @include font;
     }
     h2 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
-        letter-spacing: 0.2px;
+        @include font-style;
         color: #E5E5E5;
         max-width: 334px;
         margin: 0 auto;
@@ -117,7 +112,7 @@ img {
     padding:18px 42px;
 }
 .button:hover {
-    transform:all 2s ease-in-out 1s;
+    transform:rotate(5deg);
 }
 .buttons {
     margin:0 auto;
@@ -311,13 +306,9 @@ img {
     margin:0 auto;
 }
 .find-out {
-    font: normal 500 16px/16px;
-    display:inline-block;
-    text-decoration: none;
+    @include button-no-color; 
     background: #FFFFFF;
     border: 1px solid #30D7BA;
-    box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
-    border-radius: 39px;
     color: #30D7BA;
     padding: 18px 116px;
     margin:0 auto;
@@ -335,8 +326,6 @@ img {
         padding: 161px 0;
     }
     .buttons-1 {
-        // flex-direction:row;
-        // margin:0;
         display:none;    
     }
     .main-interest-block{
@@ -357,8 +346,7 @@ img {
         box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
         padding: 18px 46px;
         color: #FFF;
-        border-radius: 39px;
-        
+        border-radius: 39px;    
     }
     .find-out1 {
         text-decoration: none;
@@ -369,6 +357,12 @@ img {
         color: #30D7BA;
         padding: 18px 46px;
         border-radius: 39px;
+    }
+    .sign-up1:hover {
+        transform: rotate(5deg);
+    }
+    .find-out1:hover {
+        transform: rotate(5deg);
     }
     .buttons-on-display {
         display: flex;
@@ -407,14 +401,13 @@ img {
 }
 .but {
     background: #03D6F3;
-    box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
-    border-radius: 39px;
-    text-decoration: none;
     padding: 20px 36px;
     color:$white;
     margin:0 auto;
-    display:inline-block;
-    
+    @include button-no-color;     
+}
+.but:hover {
+    transform:scale(1.5) rotate(-5deg);
 }
 .perfect-block-img img {
     margin-bottom:50px;
@@ -502,7 +495,12 @@ img {
     padding: 20px 75px;
     margin:0 auto;
 }
-
+.sign-up3:hover {
+    transform: translateX(5%);
+}
+.find-out3:hover {
+    transform: translateX(5%);
+}
 @media (min-width:768px){
     .freelancer {
         display:grid;
@@ -619,9 +617,23 @@ img {
 }
 .price-0 {
     display: grid;
-    margin:0 auto;
     grid-template-columns: 70px 70px;
     grid-template-rows: 70px 70px;
+    align-content: center;
+    justify-content: center;
+}
+.price-ul-item:hover {
+    cursor:pointer;
+    background:$gradient;
+}  
+.price-ul-item:hover .ul-p-1{
+    color: $white;
+}
+.price-ul-item:hover h2{
+    color: $white;
+}
+.price-ul-item:hover p{
+    color: $white;
 }
 
 .USD {
@@ -631,6 +643,8 @@ img {
     line-height: 33px;
     letter-spacing: 0.1px;
     color: #30D7BA;
+    align-self: self-end;
+    margin:0;
 }
 .zero {
     font-style: normal;
@@ -639,8 +653,27 @@ img {
     line-height: 65px;
     letter-spacing: 0.2px;
     color: #30D7BA;
-    // grid-column:1/2;
-    // grid-row:1/3;  
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1/3;
+    text-align: right;
+    align-self: center;
+    margin:10px;
+}
+
+.zero-1{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 55px;
+    line-height: 65px;
+    letter-spacing: 0.2px;
+    color: #30D7BA;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1/3;
+    text-align: right;
+    align-self: center;
+    margin-right:20px;
 }
 .month {
     font-style: normal;
@@ -677,6 +710,16 @@ img {
     flex-direction: column;
     justify-content: center;
 }
+.knopka:hover {
+    background: $white;
+    box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    text-decoration: none;
+    color:blueviolet;
+    padding: 18px 82px;
+    margin:0 auto;  
+    transform: translateX(5%);
+}
 @media (min-width:768px) {
     .price-ul {
         flex-direction: row;
@@ -691,7 +734,7 @@ img {
     }
 }
 .forma {
-    padding:51px 0;
+    padding:47px 0 109px 0;
     text-align:center;
 }
 .line {
@@ -744,6 +787,10 @@ img {
     border-color: white;
 }
 @media (min-width:768px) {
+    .forma {
+        padding:51px 0 113px 0;
+        text-align:center;
+    }
     .main-form {
         display: flex;
         flex-direction: row;
@@ -759,5 +806,116 @@ img {
     .forma-textblock {
         padding:18px 46px;
         border-radius: 39px;
+    }
+    .map {
+        border-radius: 22px;
+    }
 }
+// main-footer
+.main-footer {
+    background: #112D57;
+    padding:72px 0 86px 0;
+    color:$white;
+}
+.main-footer ul {
+    list-style: none;
+    color:$white;
+    margin: 0 auto;
+}
+.main-footer-block {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 50% 30%;
+}
+.ul-4 {
+    grid-column: 1/2;
+}
+.img-map {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin:0 auto;
+    padding-top: 87px;
+}
+.map {
+    border-radius: 22px;
+}
+.ul-4 {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    padding: 87px 0 0 0;
+}
+.ul-4 li{
+    display: flex;
+    color:$white;
+    align-items: center;
+    margin-bottom: 21px;
+}
+.ul-4 li p {
+    padding-left: 16px;
+}
+.address {
+    margin-left:14px;
+    text-decoration: none;
+    color:$white;
+}
+.telephone {
+    color:$white;
+}
+.telephone img {
+    margin-left:10px;
+}
+.icons {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding-top:23px;
+}
+.icon1+.icon1 {
+    margin-left: 32px;
+}
+.list {
+    padding:0;
+}
+.list p {
+    margin-bottom: 20px;
+}
+@media (min-width:768px) {
+    .main-footer {
+        padding:62px 0;
+        color:$white;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 27px;
+        letter-spacing: 0.2px;  
+    }
+    .main-footer-block {
+        display:flex;  
+        justify-content: space-between; 
+        flex-wrap: wrap;
+        margin:0 auto;
+    }
+    
+    .ul-4 li p {
+        padding-left: 16px;
+    }
+    .telephone {
+        margin-bottom: 44px;
+    }
+    .address {
+        text-decoration: none;
+        color:$white;
+    }
+    .img-map {
+        padding-top: 0px;
+        margin-left: 86px;
+        margin-right: 90px;
+    }
+    .ul-4 {
+        padding-top: 25px;
+        margin-left:90px;
+    }
+    .item1 {
+        margin-top:45px;
+        margin-left:11px;
+    }
 }
