@@ -34,6 +34,8 @@ img {
 .main-block {
     h1 {
         @include font;
+        padding:0 24px;
+        margin: 0 auto 27px;
     }
     h2 {
         @include font-style;
@@ -41,6 +43,7 @@ img {
         max-width: 334px;
         margin: 0 auto;
         margin-bottom: 55px;
+        padding:0 10px;
     }
     a { 
         text-decoration: none;
@@ -123,7 +126,10 @@ img {
     box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
     padding:18px 80px;    
 }
-
+@media (min-width:539px) {
+    .tab {margin-right:20px;
+    }
+}
 .tab {
     margin-bottom:20px; 
 }
@@ -158,7 +164,7 @@ img {
         @include font;
         margin:0 auto;
         margin-bottom: 45px;
-        padding:10px;
+        padding:0 24px;
     }
     ul {
         @include clear-list;
@@ -173,11 +179,11 @@ img {
         box-sizing: border-box;
         box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
         border-radius: 10px;
-        width: 406px;
-        // height: 406px;   
+        max-width: 406px;
+        margin:20px;      
     }
     .promo-block-li+.promo-block-li {
-        margin-top: 64px;
+        margin-bottom: 64px;
     }
     .promo-block-logo {
         font-style: normal;
@@ -245,13 +251,13 @@ img {
         }
         .promo-block-li {
             text-align: left;
-            margin-bottom:10px;
+            margin:20px;    
         }
         .promo-block-li+.promo-block-li {
             margin:0;
         }
         svg {
-          margin:0;
+            margin:0;
         }
         p { 
             text-align:left;
@@ -264,29 +270,31 @@ img {
         }
     }
 }
+
 // interest-block
 .interest-block {
     padding:58px 0 95px;
 }
 
 .interest-block-1 {
-    max-width:335px;
     margin:0 auto;
 }
 .interest-block h2 {
     @include font;
     letter-spacing: 0.2px;
-    padding:10px;
+    padding:0 24px;
     margin:0 0 17px 0;
 }
 .interest-block p {
     @include font-p;
     margin:0 0 78px 0;
+    padding:0 24px;
 }
 
-.interest-block img {
+.main-interest-block img {
     margin-bottom:78px;
     margin:0 auto;
+    
 }
 .buttons-1 {
     display:flex;
@@ -331,6 +339,9 @@ img {
     .main-interest-block{
         display:flex; 
         flex-direction: row;   
+    }
+    .main-interest-block img{
+        width:50%;
     }
     .interest-block-1 {
         padding-top:113px;
@@ -394,11 +405,13 @@ img {
     }
 }
 .perfect-block1 {
-    display:flex;    
+    display:flex;  
+    width:45%;  
 }
 .perfect-block1 span {
     display: none;
 }
+
 .but {
     background: #03D6F3;
     padding: 20px 36px;
@@ -425,7 +438,7 @@ img {
     }
     .perfect-block {
         display: none;
-}
+    }
     .perfect-block-img {
         display:flex;
         flex-direction:row;
@@ -504,7 +517,7 @@ img {
 @media (min-width:768px){
     .freelancer {
         display:grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         margin:0 auto;
     }
     .buttons-2 {
@@ -544,12 +557,12 @@ img {
     }
     .sign-up3+.find-out3 {
         margin-left: 20px;
-}
+    }
 }
 // !freelancer
 
 .price {
-    padding:60px 0 103px;
+    padding:60px 0 83px;
     margin:0 auto;
 }
 .price h2 {
@@ -737,9 +750,9 @@ img {
     padding:47px 0 109px 0;
     text-align:center;
 }
-.line {
-    display: block;
-    margin: 0 auto 72px;
+hr {
+    margin-bottom:123px;
+    max-width:868px;
 }
 .forma h3 {
     @include font; 
@@ -757,9 +770,9 @@ img {
 .main-form {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-   
+    margin: 0 auto;   
 }
+
 .email {
     background: #EFEFEF;
     border: 1px solid #D0D0D0;
